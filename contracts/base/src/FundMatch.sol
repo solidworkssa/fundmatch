@@ -19,4 +19,10 @@ contract FundMatch {
     function incrementCounter() external {
         counter++;
     }
+
+   function decrementCounter() external {
+        require(counter > 0, "Counter cannot be negative");
+        counter--;
+   }
+
 }
