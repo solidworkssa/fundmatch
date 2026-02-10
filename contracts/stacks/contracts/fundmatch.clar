@@ -11,3 +11,8 @@
 
 (define-public (increment-counter)
     (ok (var-set counter (+ (var-get counter) u1))))
+
+(define-public (decrement-counter)
+    (let ((current (var-get counter)))
+        (ok (var-set counter (if (> current u0) (- current u1) u0)))))
+
