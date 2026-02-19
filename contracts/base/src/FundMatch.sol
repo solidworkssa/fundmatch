@@ -2,8 +2,11 @@
 pragma solidity ^0.8.20;
 
 /// @title FundMatch Contract
+/// @author solidworkssa
 /// @notice Quadratic funding platform for public goods.
 contract FundMatch {
+    string public constant VERSION = "1.0.0";
+
 
     struct Grant {
         address recipient;
