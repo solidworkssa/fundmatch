@@ -35,7 +35,7 @@
 
 (define-public (donate (id uint) (amount uint))
     (let ((g (unwrap! (map-get? grants id) (err u404))))
-        (try! (stx-transfer? amount tx-sender (as-contract tx-sender)))
+        (try! (stx-transfer? amount contract-caller (as-contract contract-caller)))
         (map-set grants id (merge g {total-donated: (+ (get total-donated g) amount)}))
         (ok true)
     )
